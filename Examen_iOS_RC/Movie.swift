@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+struct Movie: Decodable {
+    let Title: String
+    let Year: String
+    let Poster: String
+    let imdbID: String
+}
+
+struct MovieSearchResponse: Decodable {
+    let search: [Movie]
+    
+    private enum CodingKeys: String, CodingKey {
+        case search = "Search"
+    }
+}
